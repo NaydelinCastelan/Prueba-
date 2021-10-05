@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivos con javascript</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>N1</th>
+            <th>Operación</th>
+            <th>N2</th>
+            <th>Total</th>
+            <th>Acción</th>
+        </tr>
+        <tr>
+            <th><input type="text" id="n-1"></th>
+            <th>
+                <select name="op" id="opera">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value=""></option>
+                    <option value="/">/</option>
+                </select>
+            </th>
+            <th><input type="text" id="n-2"></th>
+            <th><input type="text" id="total"></th>
+            <th>
+                <button onclick="hola()">Calcular</button>
+            </th>
+        </tr>
+    </table>
+</body>
+<script>
+    function hola() {
+        let n1 = document.getElementById('n-1').value;
+        let n2 = document.getElementById('n-2').value;
+        let op = document.getElementById('opera').value; 
+        let total = 0;
+        switch(op) {
+            case '+':
+                total = parseInt(n1) + parseInt(n2);
+            break;       
+            case '-':
+                total = parseInt(n1) - parseInt(n2);
+            break;
+            case '*':
+                total = parseInt(n1) * parseInt(n2);
+            break;
+            case '/':
+                total = parseInt(n1) / parseInt(n2);
+            break;    
+        }
+        document.getElementById('total').value = total;
+    }        
+</script>
+</html>
